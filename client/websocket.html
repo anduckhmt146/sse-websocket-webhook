@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WebSocket Test</title>
+</head>
+<body>
+    <h1>WebSocket Notifications</h1>
+
+    <script>
+      const socket = new WebSocket("ws://localhost:8080/ws");
+
+      socket.onopen = function() {
+        console.log("Connected to WebSocket server");
+      };
+
+      socket.onmessage = function(event) {
+        console.log("📢 WebSocket message:", event.data);
+        const p = document.createElement('p');
+        p.innerText = event.data;
+        document.body.appendChild(p);
+      };
+
+      socket.onclose = function() {
+        console.log("Disconnected from WebSocket server");
+      };
+    </script>
+</body>
+</html>

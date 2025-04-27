@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SSE Test</title>
+</head>
+<body>
+    <h1>Listening for Notifications...</h1>
+
+    <script>
+      const evtSource = new EventSource("http://localhost:8080/sse");
+
+      evtSource.onmessage = function(event) {
+        console.log("📢 New Notification:", event.data);
+        const p = document.createElement('p');
+        p.innerText = event.data;
+        document.body.appendChild(p);
+      };
+    </script>
+</body>
+</html>
