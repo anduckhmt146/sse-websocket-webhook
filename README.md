@@ -34,7 +34,7 @@ go run main.go
 
 ### Start client
 
-You can using feature `Start live server` or `Open to this file html` to execute.
+You can using feature `Start live server` or `Open this file html to browser` to execute.
 
 ## Result
 
